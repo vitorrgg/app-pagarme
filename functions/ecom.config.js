@@ -1,4 +1,4 @@
-/* eslint-disable comma-dangle, no-multi-spaces */
+/* eslint-disable comma-dangle, no-multi-spaces, key-spacing */
 
 /**
  * Edit base E-Com Plus Application object here.
@@ -7,8 +7,8 @@
 
 const app = {
   app_id: 117391,
-  title: 'My Awesome E-Com Plus App',
-  slug: 'my-awesome-app',
+  title: 'Pagar.me',
+  slug: 'pagarme',
   type: 'external',
   state: 'active',
   authentication: true,
@@ -34,13 +34,13 @@ const app = {
      * Triggered when listing payments, must return available payment methods.
      * Start editing `routes/ecom/modules/list-payments.js`
      */
-    // list_payments:        { enabled: true },
+    list_payments:        { enabled: true },
 
     /**
      * Triggered when order is being closed, must create payment transaction and return info.
      * Start editing `routes/ecom/modules/create-transaction.js`
      */
-    // create_transaction:   { enabled: true },
+    create_transaction:   { enabled: true },
   },
 
   /**
@@ -82,7 +82,7 @@ const app = {
       // 'DELETE',        // Delete customers
     ],
     orders: [
-      // 'GET',           // List/read orders with public and private fields
+      'GET',           // List/read orders with public and private fields
       // 'POST',          // Create orders
       // 'PATCH',         // Edit orders
       // 'PUT',           // Overwrite orders
@@ -106,7 +106,7 @@ const app = {
     ],
     'orders/payments_history': [
       // 'GET',           // List/read order payments history events
-      // 'POST',          // Create payments history entry with new status
+      'POST',          // Create payments history entry with new status
       // 'DELETE',        // Delete payments history entry
     ],
 
