@@ -24,7 +24,7 @@ const { app, procedures } = require('./ecom.config')
 // https://github.com/ecomplus/application-sdk
 const { ecomServerIps, setup } = require('@ecomplus/application-sdk')
 
-server.use(bodyParser.urlencoded({ extended: false }))
+server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
 server.use((req, res, next) => {
