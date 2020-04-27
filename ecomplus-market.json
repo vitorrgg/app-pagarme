@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "",
-    "short_description": "",
-    "category": "tools"
+    "title": "Pagar.me",
+    "short_description": "Pagamento via cartão de crédito e boleto com Pagar.me",
+    "category": "sales"
   }
 }
