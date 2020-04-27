@@ -55,7 +55,7 @@ exports.post = ({ appSdk }, req, res) => {
       amount: Math.floor(amount.total * 100)
     }
 
-    const { boleto } = config
+    const boleto = config.banking_billet
     if (boleto) {
       if (boleto.instructions) {
         pagarmeTransaction.boleto_instructions = boleto.instructions

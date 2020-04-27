@@ -77,7 +77,7 @@ exports.post = ({ appSdk }, req, res) => {
     const methodConfig = config[paymentMethod]
     if (methodConfig && !methodConfig.disable) {
       const isCreditCard = paymentMethod === 'credit_card'
-      const label = config.label || (isCreditCard ? 'Cartão de crédito' : 'Boleto bancário')
+      const label = methodConfig.label || (isCreditCard ? 'Cartão de crédito' : 'Boleto bancário')
       const gateway = {
         label,
         icon: methodConfig.icon,
