@@ -48,7 +48,7 @@ server.use((req, res, next) => {
       if (operatorToken !== req.get('x-operator-token')) {
         // last check for IP address from E-Com Plus servers
         const clientIp = req.get('x-forwarded-for') || req.connection.remoteAddress
-        if (process.env.NODE_ENV !== 'development' && ecomServerIps.indexOf(clientIp) === -1) {
+        if (ecomServerIps.indexOf(clientIp) === -1) {
           return res.status(403).send('Who are you? Unauthorized IP address')
         }
       }
