@@ -39,6 +39,224 @@
     "products/price": [],
     "products/variations/price": []
   },
+  "admin_settings": {
+    "pagarme_api_key": {
+      "schema": {
+        "type": "string",
+        "maxLength": 255,
+        "title": "Chave de API Pagar.me",
+        "description": "Chave de API disponível em https://dashboard.pagar.me/#/myaccount/apikeys"
+      },
+      "hide": true
+    },
+    "pagarme_encryption_key": {
+      "schema": {
+        "type": "string",
+        "maxLength": 255,
+        "title": "Chave de criptografia",
+        "description": "Chave de criptografia disponível em https://dashboard.pagar.me/#/myaccount/apikeys"
+      },
+      "hide": true
+    },
+    "soft_descriptor": {
+      "schema": {
+        "type": "string",
+        "title": "Descrição da cobrança",
+        "description": "Como a cobrança será informada na fatura do cartão ou boleto"
+      },
+      "hide": false
+    },
+    "credit_card": {
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "disable": {
+            "type": "boolean",
+            "title": "Desabilitar cartão",
+            "description": "Desabilitar pagamento com cartão via Pagar.me"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Rótulo",
+            "description": "Nome da forma de pagamento exibido para os clientes",
+            "default": "Boleto bancário"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 1000,
+            "title": "Descrição",
+            "description": "Texto auxiliar sobre a forma de pagamento, pode conter tags HTML"
+          },
+          "icon": {
+            "type": "string",
+            "maxLength": 255,
+            "format": "uri",
+            "title": "Ícone",
+            "description": "Ícone customizado para a forma de pagamento, URL da imagem"
+          }
+        },
+        "title": "Cartão de crédito",
+        "description": "Configurações adicionais para cartão de crédito"
+      },
+      "hide": false
+    },
+    "banking_billet": {
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "disable": {
+            "type": "boolean",
+            "title": "Desabilitar boleto",
+            "description": "Desabilitar pagamento com boleto bancário via Pagar.me"
+          },
+          "days_due_date": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 999,
+            "default": 7,
+            "title": "Dias corridos até o vencimento",
+            "description": "Representa diferença de dias entre a data da requisição e a data de vencimento"
+          },
+          "instructions": {
+            "type": "string",
+            "maxLength": 255,
+            "title": "Intruções do boleto",
+            "description": "Linhas impressas no boleto para instruções ao operador de caixa ou pagador"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 50,
+            "title": "Rótulo",
+            "description": "Nome da forma de pagamento exibido para os clientes",
+            "default": "Boleto bancário"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 1000,
+            "title": "Descrição",
+            "description": "Texto auxiliar sobre a forma de pagamento, pode conter tags HTML"
+          },
+          "icon": {
+            "type": "string",
+            "maxLength": 255,
+            "format": "uri",
+            "title": "Ícone",
+            "description": "Ícone customizado para a forma de pagamento, URL da imagem"
+          }
+        },
+        "title": "Boleto bancário",
+        "description": "Configurações adicionais para boleto bancário"
+      },
+      "hide": false
+    },
+    "discount": {
+      "schema": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "apply_at": {
+            "type": "string",
+            "enum": [
+              "total",
+              "subtotal",
+              "freight"
+            ],
+            "default": "subtotal",
+            "title": "Aplicar desconto em",
+            "description": "Em qual valor o desconto deverá ser aplicado no checkout"
+          },
+          "min_amount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 999999999,
+            "title": "Pedido mínimo",
+            "description": "Montante mínimo para aplicar o desconto"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "percentage",
+              "fixed"
+            ],
+            "default": "percentage",
+            "title": "Tipo de desconto",
+            "description": "Desconto com valor percentual ou fixo"
+          },
+          "value": {
+            "type": "number",
+            "minimum": -99999999,
+            "maximum": 99999999,
+            "title": "Valor do desconto",
+            "description": "Valor percentual ou fixo a ser descontado, dependendo to tipo configurado"
+          },
+          "banking_billet": {
+            "type": "boolean",
+            "default": true,
+            "title": "Desconto no boleto",
+            "description": "Habilitar desconto via boleto Pagar.me (padrão)"
+          },
+          "credit_card": {
+            "type": "boolean",
+            "title": "Desconto no cartão",
+            "description": "Habilitar desconto com cartão de crédito via Pagar.me"
+          }
+        },
+        "title": "Desconto",
+        "description": "Desconto a ser aplicado para pagamentos via Pagar.me"
+      },
+      "hide": false
+    },
+    "installments": {
+      "schema": {
+        "type": "object",
+        "required": [
+          "max_number"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "min_installment": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 99999999,
+            "default": 5,
+            "title": "Parcela mínima",
+            "description": "Valor mínimo da parcela"
+          },
+          "max_number": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 999,
+            "title": "Máximo de parcelas",
+            "description": "Número máximo de parcelas"
+          },
+          "monthly_interest": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 9999,
+            "default": 0,
+            "title": "Juros mensais",
+            "description": "Taxa de juros mensal, zero para parcelamento sem juros"
+          },
+          "max_interest_free": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 999,
+            "title": "Parcelas sem juros",
+            "description": "Mesclar parcelamento com e sem juros (ex.: até 3x sem juros e 12x com juros)"
+          }
+        },
+        "title": "Parcelamento",
+        "description": "Opçãos de parcelamento no cartão via Pagar.me"
+      },
+      "hide": false
+    }
+  },
   "auth_callback_uri": "https://us-central1-ecom-pagarme.cloudfunctions.net/app/ecom/auth-callback",
   "version": "1.0.0"
 }
