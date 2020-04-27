@@ -104,7 +104,7 @@ exports.post = ({ appSdk }, req, res) => {
     street: to.street,
     neighborhood: to.borough,
     city: to.city,
-    state: to.province,
+    state: to.province || to.province_code,
     country: to.country_code ? to.country_code.toLowerCase() : 'br',
     zipcode: to.zip,
     street_number: to.number || 0,
