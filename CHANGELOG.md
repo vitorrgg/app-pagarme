@@ -2,6 +2,42 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.0.0 (2020-04-27)
+
+
+### Features
+
+* **app:** setup admin settings ([b3f4b86](https://github.com/ecomplus/application-starter/commit/b3f4b86de7b6d0fa276adbfa279b589ab74fae72))
+* **config:** setup basic pagarme app config ([765fe22](https://github.com/ecomplus/application-starter/commit/765fe22a7a54a2a055cd26773e49e9399a3ee2a6))
+* **create-transaction:** first version creating pagarme transaction ([2326a12](https://github.com/ecomplus/application-starter/commit/2326a12f5bf741448a20ae72d8274fb5f4ad2898))
+* **lib:** helpers for installments and status parsing ([4dcbd57](https://github.com/ecomplus/application-starter/commit/4dcbd57623642c5f2699d6c27ce8d0506e2758cc))
+* **list-payments:** setup list payments with credit card and boleto ([6fb09b6](https://github.com/ecomplus/application-starter/commit/6fb09b68755e1276e984be36bf308058fab95cc3))
+* **onload-expression:** handle pagarmejs to create card hash ([7f11230](https://github.com/ecomplus/application-starter/commit/7f11230875cba7e8d3b522b56dfc315502823aae))
+* **postback:** endpoint to treat pagarme postback (status changes) ([d486542](https://github.com/ecomplus/application-starter/commit/d4865424362957e5901324de5fcbe5598b6494f8))
+
+
+### Bug Fixes
+
+* **create-transacion:** fix soft descriptor size, send pagarme error msg ([f012444](https://github.com/ecomplus/application-starter/commit/f0124446604f7138e6411bd4df8f8177465d7aab))
+* **create-transaction:** fix pagarme address object (number field) ([f835e65](https://github.com/ecomplus/application-starter/commit/f835e65858e895600a7cad307440272f8a1959b6))
+* **create-transaction:** not addresses field on customer (pagar api v4) ([b0ed52d](https://github.com/ecomplus/application-starter/commit/b0ed52d3ed7a050426d6743b5f830387f8fe11b9))
+* **create-transaction:** properly declare items array ([4cb1f9a](https://github.com/ecomplus/application-starter/commit/4cb1f9a933ea5c74dc5c2d813c18e004150b0427))
+* **create-transaction:** set state param with province code ([e5a611a](https://github.com/ecomplus/application-starter/commit/e5a611a3bf64cff56a6b69a7e3a8669584f7de20))
+* **deps:** update @ecomplus/application-sdk to v1.11.11 ([e4036c3](https://github.com/ecomplus/application-starter/commit/e4036c349f85c0275f52c351565ba4690f2042f7))
+* **deps:** update @ecomplus/application-sdk to v1.11.12 ([1df4748](https://github.com/ecomplus/application-starter/commit/1df4748630a2f1dd4a09ea5cdcc0b5e1659ed670))
+* **deps:** update @ecomplus/application-sdk to v1.11.13 ([32f60fa](https://github.com/ecomplus/application-starter/commit/32f60fab7ae1c9da740d6430493c5e82aec2d7ed))
+* **deps:** update all non-major dependencies ([5726398](https://github.com/ecomplus/application-starter/commit/5726398096a22478e8decbb41c649a5e0a5a8e63))
+* **ecom-auth:** ensure debugging appSdk processes ([6f3de6e](https://github.com/ecomplus/application-starter/commit/6f3de6e46537d8fe15a6a09a8482e469f1661b63))
+* **list-payments:** add all payment methods by default ([7d54c93](https://github.com/ecomplus/application-starter/commit/7d54c93b779b8a7f1c33dfdc3573725ebe46fe39))
+* **modules:** minor fixes handling admin settings config ([452079a](https://github.com/ecomplus/application-starter/commit/452079adefd5d71490b83cff8bbc3429c6019c0d))
+* **postback:** fix requiring from lib ([1a62439](https://github.com/ecomplus/application-starter/commit/1a624393dcb6588cbe0a53a4cbe3e661c8295c61))
+* **postback:** parse storeId int and debug postback requests ([f965a4e](https://github.com/ecomplus/application-starter/commit/f965a4e381ecac9a853cfa98a6c8c5d26eddfbb2))
+* **refresh-tokens:** fix checking refresh tokens request and debug ([16256c6](https://github.com/ecomplus/application-starter/commit/16256c6064a280ec27f3d79b63f26a745d4fc4c1))
+* **refresh-tokens:** fix handling ecomAuth to update current tokens ([5f0c0ae](https://github.com/ecomplus/application-starter/commit/5f0c0ae68830b0bf73689c79c59490d9dfd4426b))
+* **setup:** do not disable updates on refresh-tokens route ([a8d64d5](https://github.com/ecomplus/application-starter/commit/a8d64d5141793d7094f3f42a4ad75a74dcfec685))
+* **setup:** ensure enable token updates by default ([c5a2eb2](https://github.com/ecomplus/application-starter/commit/c5a2eb2474bf8de22137b24534b8ea9ec1e7bf5b))
+* **setup:** ensure enable token updates by default ([83a8f45](https://github.com/ecomplus/application-starter/commit/83a8f450ff294f6952fa2134db1e9aa75b18d1df))
+
 ## [1.0.0-starter.9](https://github.com/ecomplus/application-starter/compare/v1.0.0-starter.8...v1.0.0-starter.9) (2020-04-21)
 
 
