@@ -7,15 +7,16 @@ exports.post = ({ appSdk }, req, res) => {
   // https://docs.pagar.me/docs/gerenciando-postbacks
   const pagarmeTransaction = req.body && req.body.transaction
   if (pagarmeTransaction && pagarmeTransaction.metadata) {
-    const storeId = pagarmeTransaction.metadata.store_id
+    const storeId = parseInt(pagarmeTransaction.metadata.store_id, 10)
     const orderId = pagarmeTransaction.metadata.order_id
 
     if (storeId > 100 && /^[a-f0-9]{24}$/.test(orderId)) {
-      // validate Pagar.me postback
-      // https://github.com/pagarme/pagarme-js/issues/170#issuecomment-503729557
+      console.log('> Postback #', storeId, orderId)
       // read configured E-Com Plus app data
       return getAppData({ appSdk, storeId })
         .then(config => {
+          // validate Pagar.me postback
+          // https://github.com/pagarme/pagarme-js/issues/170#issuecomment-503729557
           const apiKey = config.pagarme_api_key
           const verifyBody = qs.stringify(req.body)
           const signature = req.headers['x-hub-signature'].replace('sha1=', '')
@@ -56,6 +57,7 @@ exports.post = ({ appSdk }, req, res) => {
           res.sendStatus(200)
         })
         .catch(err => {
+          err.metadata = pagarmeTransaction.metadata
           console.error(err)
           res.sendStatus(500)
         })
