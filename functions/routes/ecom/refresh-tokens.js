@@ -4,7 +4,7 @@ exports.post = ({ admin }, req, res) => {
   process.env.ECOM_AUTH_DEBUG = 'true'
   require('@ecomplus/application-sdk').setup(null, false, admin.firestore())
     .then(appSdk => {
-      res.status(204).send()
+      res.sendStatus(200)
     }).catch(err => {
       console.error(err)
       res.sendStatus(500)

@@ -101,8 +101,8 @@ recursiveReadDir(routesDir).filter(filepath => filepath.endsWith('.js')).forEach
   for (const method in methods) {
     const middleware = methods[method]
     if (middleware) {
-      console.log(`${method} ${filename}`)
       router[method](filename, (req, res) => {
+        console.log(`${method} ${filename}`)
         // setup ecomAuth client with Firestore instance
         setup(null, true, admin.firestore()).then(appSdk => {
           middleware({ appSdk, admin }, req, res)
