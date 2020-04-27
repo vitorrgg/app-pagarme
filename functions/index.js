@@ -22,6 +22,9 @@ const { app, procedures } = require('./ecom.config')
 
 // handle app authentication to Store API
 // https://github.com/ecomplus/application-sdk
+// debug ecomAuth processes and ensure enable token updates by default
+process.env.ECOM_AUTH_DEBUG = 'true'
+process.env.ECOM_AUTH_UPDATE = 'enabled'
 const { ecomServerIps, setup } = require('@ecomplus/application-sdk')
 
 server.use(bodyParser.urlencoded({ extended: true }))
@@ -104,15 +107,11 @@ recursiveReadDir(routesDir).filter(filepath => filepath.endsWith('.js')).forEach
       router[method](filename, (req, res) => {
         console.log(`${method} ${filename}`)
 
-        // debug refresh tokens process
+        // setup ecomAuth client with Firestore instance
         const isRefreshTokens = filename.startsWith('/ecom/refresh-tokens')
         if (isRefreshTokens) {
           console.log('Updating E-Com Plus access tokens')
-          process.env.ECOM_AUTH_DEBUG = 'true'
-          process.env.ECOM_AUTH_UPDATE = 'enabled'
         }
-
-        // setup ecomAuth client with Firestore instance
         setup(null, !isRefreshTokens, admin.firestore()).then(appSdk => {
           middleware({ appSdk, admin }, req, res)
         }).catch(err => {
