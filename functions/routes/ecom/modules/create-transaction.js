@@ -74,7 +74,7 @@ exports.post = ({ appSdk }, req, res) => {
 
   pagarmeTransaction.api_key = config.pagarme_api_key
   pagarmeTransaction.postback_url = `${baseUri}/pagarme/postback`
-  pagarmeTransaction.soft_descriptor = config.soft_descriptor || `${params.domain}_PagarMe`
+  pagarmeTransaction.soft_descriptor = (config.soft_descriptor || `${params.domain}_PagarMe`).substr(0, 13)
   pagarmeTransaction.metadata = {
     order_number: params.order_number,
     store_id: storeId,
@@ -199,7 +199,7 @@ exports.post = ({ appSdk }, req, res) => {
     .catch(error => {
       // try to debug request error
       const errCode = 'PAGARME_TRANSACTION_ERR'
-      const { message } = error
+      let { message } = error
       const err = new Error(`${errCode} #${storeId} - ${orderId} => ${message}`)
       if (error.response) {
         const { status, data } = error.response
@@ -211,6 +211,8 @@ exports.post = ({ appSdk }, req, res) => {
           } else {
             err.response = data
           }
+        } else if (data && Array.isArray(data.errors) && data.errors[0] && data.errors[0].message) {
+          message = data.errors[0].message
         }
       }
       console.error(err)

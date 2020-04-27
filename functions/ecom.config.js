@@ -143,7 +143,7 @@ const app = {
         type: 'string',
         maxLength: 255,
         title: 'Chave de API Pagar.me',
-        description: 'Chave de API disponível em https://dashboard.pagar.me/#/myaccount/apikeys'
+        description: 'Chave de API versão 4 (2019-09-01) em https://dashboard.pagar.me/#/myaccount/apikeys'
       },
       hide: true
     },
