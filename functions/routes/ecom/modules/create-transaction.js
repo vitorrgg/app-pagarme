@@ -116,9 +116,6 @@ exports.post = ({ appSdk }, req, res) => {
       fee: Math.floor(amount.freight * 100),
       address: parseAddress(to)
     }
-    pagarmeTransaction.customer.addresses = [
-      pagarmeTransaction.shipping.address
-    ]
     pagarmeTransaction.billing = {
       name: (payer || buyer).fullname,
       address: params.billing_address ? parseAddress(params.billing_address)
