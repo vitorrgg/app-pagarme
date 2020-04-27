@@ -131,6 +131,7 @@ exports.post = ({ appSdk }, req, res) => {
     }
   }
 
+  pagarmeTransaction.items = []
   items.forEach(item => {
     pagarmeTransaction.items.push({
       id: item.sku || item.variation_id || item.product_id,
