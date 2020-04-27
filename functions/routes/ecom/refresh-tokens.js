@@ -1,6 +1,12 @@
-exports.post = ({ appSdk }, req, res) => {
-  // we don't have to do nothing on this endpoint
-  // update tokens service will be auto started by `appSdk` on setup:
-  // https://github.com/ecomplus/application-sdk/blob/master/main.js#L65
-  res.status(204).send()
+exports.post = ({ admin }, req, res) => {
+  // force new ecomAuth setup with Firestore instance
+  // update tokens service will be auto started
+  process.env.ECOM_AUTH_DEBUG = 'true'
+  require('@ecomplus/application-sdk').setup(null, false, admin.firestore())
+    .then(appSdk => {
+      res.status(204).send()
+    }).catch(err => {
+      console.error(err)
+      res.sendStatus(500)
+    })
 }
