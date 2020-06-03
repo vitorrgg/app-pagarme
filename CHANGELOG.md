@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/ecomplus/application-starter/compare/v1.0.0...v1.0.1) (2020-06-03)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#3](https://github.com/ecomplus/application-starter/issues/3)) ([c3bfe41](https://github.com/ecomplus/application-starter/commit/c3bfe41895992aaee0add727e5fe73d429fe1129))
+* **deps:** update to @ecomplus/application-sdk v1.13.0 ([4e63b6e](https://github.com/ecomplus/application-starter/commit/4e63b6e4a5960a9d80c7fd40dfbddd460537c983))
+* **deps:** update to @ecomplus/application-sdk@firestore ([1cea536](https://github.com/ecomplus/application-starter/commit/1cea536a4fb45f88e01d2def2cc0df2f19fbe4d0))
+* **refresh-tokens:** force update tokens service ([77ed8fb](https://github.com/ecomplus/application-starter/commit/77ed8fb656d08069594c3e0b10746f4bd00953a7))
+* **setup:** setup appSdk with disableUpdates ([8494348](https://github.com/ecomplus/application-starter/commit/8494348fdaf4772d83c139b7dcfe859c8f93e349))
+
 ## 1.0.0 (2020-04-27)
 
 
