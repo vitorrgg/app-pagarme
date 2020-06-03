@@ -111,9 +111,10 @@ recursiveReadDir(routesDir).filter(filepath => filepath.endsWith('.js')).forEach
         if (isRefreshTokens) {
           console.log('Updating E-Com Plus access tokens')
         }
+        console.log(typeof setup)
 
         // setup ecomAuth client with Firestore instance
-        setup(null, !isRefreshTokens, admin.firestore()).then(appSdk => {
+        console.log(setup(null, !isRefreshTokens, admin.firestore()).then(appSdk => {
           middleware({ appSdk, admin }, req, res)
         }).catch(err => {
           console.error(err)
@@ -122,7 +123,7 @@ recursiveReadDir(routesDir).filter(filepath => filepath.endsWith('.js')).forEach
             error: 'SETUP',
             message: 'Can\'t setup `ecomAuth`, check Firebase console registers'
           })
-        })
+        }))
       })
     }
   }
