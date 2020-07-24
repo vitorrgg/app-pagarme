@@ -1,24 +1,26 @@
 module.exports = (amount, installments, gateway = {}, response) => {
-  const maxInstallments = installments.max_number && installments.max_interest_free
-    ? Math.max(installments.max_number, installments.max_interest_free)
-    : installments.max_number || installments.max_interest_free
+  let maxInterestFree = !(installments.interest_free_min_amount > amount.total)
+    ? installments.max_interest_free : 0
+  const maxInstallments = installments.max_number && maxInterestFree
+    ? Math.max(installments.max_number, maxInterestFree)
+    : installments.max_number || maxInterestFree
   if (maxInstallments > 1) {
     // default installments option
     if (!installments.monthly_interest) {
-      installments.max_interest_free = maxInstallments
+      maxInterestFree = maxInstallments
     }
     if (response) {
       response.installments_option = {
         min_installment: installments.min_installment,
-        max_number: installments.max_interest_free || installments.max_number,
-        monthly_interest: installments.max_interest_free ? 0 : installments.monthly_interest
+        max_number: maxInterestFree || installments.max_number,
+        monthly_interest: maxInterestFree ? 0 : installments.monthly_interest
       }
     }
 
     // list installment options
     gateway.installment_options = []
     for (let number = 2; number < maxInstallments; number++) {
-      const tax = !(installments.max_interest_free >= number)
+      const tax = !(maxInterestFree >= number)
       let interest
       if (tax) {
         interest = installments.monthly_interest / 100

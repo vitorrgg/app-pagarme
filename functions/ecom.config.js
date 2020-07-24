@@ -347,6 +347,13 @@ const app = {
             maximum: 999,
             title: 'Parcelas sem juros',
             description: 'Mesclar parcelamento com e sem juros (ex.: até 3x sem juros e 12x com juros)'
+          },
+          interest_free_min_amount: {
+            type: 'integer',
+            minimum: 1,
+            maximum: 999999999,
+            title: 'Mínimo sem juros',
+            description: 'Montante mínimo para parcelamento sem juros'
           }
         },
         title: 'Parcelamento',
