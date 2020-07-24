@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/ecomplus/application-starter/compare/v1.0.1...v1.1.0) (2020-07-24)
+
+
+### Features
+
+* **installments-config:** add 'interest_free_min_amount' optional field ([e1cc32a](https://github.com/ecomplus/application-starter/commit/e1cc32a1247cb659a064727b312627908999274a))
+
 ### [1.0.1](https://github.com/ecomplus/application-starter/compare/v1.0.0...v1.0.1) (2020-06-03)
 
 
