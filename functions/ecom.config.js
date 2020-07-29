@@ -179,7 +179,7 @@ const app = {
             maxLength: 50,
             title: 'Rótulo',
             description: 'Nome da forma de pagamento exibido para os clientes',
-            default: 'Boleto bancário'
+            default: 'Cartão de crédito'
           },
           text: {
             type: 'string',
