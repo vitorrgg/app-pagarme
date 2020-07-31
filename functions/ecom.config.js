@@ -357,7 +357,7 @@ const app = {
           }
         },
         title: 'Parcelamento',
-        description: 'Opçãos de parcelamento no cartão via Pagar.me'
+        description: 'Opções de parcelamento no cartão via Pagar.me'
       },
       hide: false
     }
