@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/ecomplus/application-starter/compare/v1.1.1...v1.1.2) (2020-09-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @ecomplus/application-sdk@firestore ([65caee4](https://github.com/ecomplus/application-starter/commit/65caee46e0ea30bfbbe5769e82173b6d0e0851dd))
+* **deps:** update all non-major dependencies ([#10](https://github.com/ecomplus/application-starter/issues/10)) ([9c1270e](https://github.com/ecomplus/application-starter/commit/9c1270e76a596793f43e8e2801873be788801d98))
+* **deps:** update dependency firebase-admin to v9 ([#9](https://github.com/ecomplus/application-starter/issues/9)) ([cc933b3](https://github.com/ecomplus/application-starter/commit/cc933b38b232594bf776ee38141d40b01626be4e))
+* **list-payments:** fix handling max installments number ([#11](https://github.com/ecomplus/application-starter/issues/11)) ([cc54179](https://github.com/ecomplus/application-starter/commit/cc541792a4c7138cf12ff124cb4b8e03cc0a3e04))
+
 ### [1.1.1](https://github.com/ecomplus/application-starter/compare/v1.1.0...v1.1.1) (2020-07-29)
 
 
