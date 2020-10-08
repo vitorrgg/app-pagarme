@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/ecomplus/application-starter/compare/v1.1.2...v1.1.3) (2020-10-08)
+
+
+### Bug Fixes
+
+* **add-installments:** fix treating min installment config value ([#12](https://github.com/ecomplus/application-starter/issues/12)) ([efa04d2](https://github.com/ecomplus/application-starter/commit/efa04d2e053374b90330554dd91d4c8a9d19b2d7))
+* **deps:** update all non-major dependencies ([#13](https://github.com/ecomplus/application-starter/issues/13)) ([ec2e6ec](https://github.com/ecomplus/application-starter/commit/ec2e6ec043e065ef11898b78fb6100f61369a8ba))
+
 ### [1.1.2](https://github.com/ecomplus/application-starter/compare/v1.1.1...v1.1.2) (2020-09-02)
 
 
