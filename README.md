@@ -1,6 +1,8 @@
 # App Pagar.me
 
-[![Deploy](https://github.com/ecomplus/app-pagarme/workflows/Deploy/badge.svg)](https://github.com/ecomplus/app-pagarme/actions?workflow=Deploy) [![Call refresh tokens](https://github.com/ecomplus/app-pagarme/workflows/Call%20refresh%20tokens/badge.svg)](https://github.com/ecomplus/app-pagarme/actions?workflow=Call+refresh+tokens) [![Publish](https://github.com/ecomplus/app-pagarme/workflows/Publish/badge.svg)](https://github.com/ecomplus/app-pagarme/actions?workflow=Publish) [![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Deploy](https://github.com/ecomplus/app-pagarme/workflows/Deploy/badge.svg)](https://github.com/ecomplus/app-pagarme/actions?workflow=Deploy) [![Publish](https://github.com/ecomplus/app-pagarme/workflows/Publish/badge.svg)](https://github.com/ecomplus/app-pagarme/actions?workflow=Publish) [![License MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+E-Com Plus app to integrate Pagar.me gateway
 
 [CHANGELOG](https://github.com/ecomplus/app-pagarme/blob/master/CHANGELOG.md)
 
