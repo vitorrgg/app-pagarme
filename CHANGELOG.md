@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/ecomplus/application-starter/compare/v1.1.3...v1.1.4) (2020-11-05)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#16](https://github.com/ecomplus/application-starter/issues/16)) ([5d9034b](https://github.com/ecomplus/application-starter/commit/5d9034b7b17d7c246af89bf40c56bb1d9e8466f6))
+* **refresh-tokens:** add scheduled cloud function to run update ([a0e97e1](https://github.com/ecomplus/application-starter/commit/a0e97e1e1872402a9a07050d2af6f95f9ff024fb))
+
 ### [1.1.3](https://github.com/ecomplus/application-starter/compare/v1.1.2...v1.1.3) (2020-10-08)
 
 
