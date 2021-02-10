@@ -108,7 +108,7 @@ exports.post = ({ appSdk }, req, res) => {
     country: to.country_code ? to.country_code.toLowerCase() : 'br',
     zipcode: to.zip,
     street_number: String(to.number) || 's/n',
-    complementary: to.complement
+    complementary: to.complement || null
   })
   if (to && to.street) {
     pagarmeTransaction.shipping = {
