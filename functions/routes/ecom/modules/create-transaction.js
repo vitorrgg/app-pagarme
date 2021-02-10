@@ -78,7 +78,8 @@ exports.post = ({ appSdk }, req, res) => {
   pagarmeTransaction.metadata = {
     order_number: params.order_number,
     store_id: storeId,
-    order_id: orderId
+    order_id: orderId,
+    platform_integration: 'ecomplus'
   }
 
   pagarmeTransaction.customer = {
