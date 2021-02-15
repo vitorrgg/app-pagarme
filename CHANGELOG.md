@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/ecomplus/application-starter/compare/v1.1.4...v1.2.0) (2021-02-15)
+
+
+### Features
+
+* **create-transaction:** add partnet code to pagar.me transaction body ([#26](https://github.com/ecomplus/application-starter/issues/26)) ([3de831d](https://github.com/ecomplus/application-starter/commit/3de831d79b124c890172e46d8f5d5ca91285da12))
+
+
+### Bug Fixes
+
+* **create-transaction:** prevent sending `complementary` with empty string ([#25](https://github.com/ecomplus/application-starter/issues/25)) ([ee711ca](https://github.com/ecomplus/application-starter/commit/ee711ca267fbd967c81dfc126b26073795281af2))
+* **create-transaction:** unset `complementary` (undefined) if empty ([f9ee54d](https://github.com/ecomplus/application-starter/commit/f9ee54d87bc45c679e58fa6d7aeb06775cb30d5e))
+* **deps:** update all non-major dependencies ([13b073d](https://github.com/ecomplus/application-starter/commit/13b073d6e2cfbf14e52f09a5c540740b9886cda7))
+
 ### [1.1.4](https://github.com/ecomplus/application-starter/compare/v1.1.3...v1.1.4) (2020-11-05)
 
 
